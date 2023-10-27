@@ -613,7 +613,8 @@ _download_brotli() {
         {
             rm /usr/local/src/ngx_brotli -rf
             git clone --depth=1 https://github.com/google/ngx_brotli /usr/local/src/ngx_brotli -q
-
+            cd /usr/local/src/ngx_brotli
+            git submodule update --init
         } >>/tmp/nginx-ee.log 2>&1
 
     }; then
